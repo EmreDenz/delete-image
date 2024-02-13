@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Login to Github Packages
-        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login -u USERNAME --password-stdin docker.pkg.github.com
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login -u edeniz --password-stdin docker.pkg.github.com
 
       - name: Build the Docker Image1
         run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0 .

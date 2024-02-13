@@ -39,7 +39,7 @@ jobs:
 #      - name: Push the Docker Image3
 #        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC1
 
-      - uses: actions/delete-package-versions@v5.0.0
+      - uses: actions/delete-package-versions@v4.0.0
         with:
           package-name: 'delete-deneme-image/test'
           package-type: 'container'

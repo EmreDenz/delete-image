@@ -18,30 +18,30 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Login to Github Packages
-        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login -u edeniz --password-stdin docker.pkg.github.com
-
-      - name: Build the Docker Image1
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0 .
-
-      - name: Build the Docker Image2
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC0 . -f Dockerfile1
-
-      - name: Build the Docker Image3
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC1 . -f Dockerfile2
-
-      - name: Push the Docker Image1
-        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0
-
-      - name: Push the Docker Image2
-        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC0
-
-      - name: Push the Docker Image3
-        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC1
+#      - name: Login to Github Packages
+#        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login -u edeniz --password-stdin docker.pkg.github.com
+#
+#      - name: Build the Docker Image1
+#        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0 .
+#
+#      - name: Build the Docker Image2
+#        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC0 . -f Dockerfile1
+#
+#      - name: Build the Docker Image3
+#        run: docker build -t docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC1 . -f Dockerfile2
+#
+#      - name: Push the Docker Image1
+#        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0
+#
+#      - name: Push the Docker Image2
+#        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC0
+#
+#      - name: Push the Docker Image3
+#        run: docker push docker.pkg.github.com/${{ github.repository }}/test:1.0.0-RC1
 
       - uses: actions/delete-package-versions@v5.0.0
         with:
-          package-name: 'delete-image/test:1.0.0-rc1'
+          package-name: 'delete-deneme-image/test'
           package-type: 'container'
           ignore-versions:  '^(0|[1-9]\d*)\.0\.0$'
           min-versions-to-keep: 1

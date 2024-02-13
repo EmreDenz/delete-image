@@ -1,2 +1,2 @@
 FROM jmalloc/echo-server
-ENV deneme test
+ENV deneme test2

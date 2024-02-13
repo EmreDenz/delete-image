@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/delete-package-versions@v5.0.0
         with:
-          package-name: 'ghcr.io/emredenz/delete-image/test'
+          package-name: 'emredenz/delete-image/test:1.0.0-rc1'
           package-type: 'container'
           ignore-versions:  '^(0|[1-9]\d*)\.0\.0$'
           min-versions-to-keep: 1

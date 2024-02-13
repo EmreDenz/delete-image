@@ -43,5 +43,6 @@ jobs:
         with:
           package-name: 'delete-deneme-image/test'
           package-type: 'container'
-          ignore-versions:  '^(0|[1-9]\\d*)\\.0\\.0$'
+#          ignore-versions:  '^(0|[1-9]\\d*)\\.0\\.0$'
+          delete-only-pre-release-versions: 'true'
           min-versions-to-keep: 1
